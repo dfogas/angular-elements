@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "package": "cat dist/angular-elements/{runtime-es2015,polyfills-es2015,scripts,main-es2015}.js | gzip > elements.js.gz",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "elements-build": "ng build --prod --output-hashing none && node elements-build.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/router": "~8.2.4",
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
+    "concat": "^1.0.3",
     "document-register-element": "^1.7.2",
     "firebase": "^6.5.0",
     "rxjs": "~6.4.0",
